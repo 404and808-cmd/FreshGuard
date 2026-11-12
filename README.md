@@ -294,7 +294,7 @@ FreshGuard is a prototype, not a production-grade fact-checking or continuous mo
 
 ## 👥 Team
 
-Built as a cybersecurity and AI hackathon project.
+Built as a hackathon project. Individual Participation.
 
 **Project:** FreshGuard
 
