@@ -80,6 +80,38 @@ FreshGuard is a temporal evidence intelligence prototype that:
              DASHBOARD RESULTS
 ```
 
+## System ARchitecture - Mermaid Diagram
+
+flowchart TD
+    U([User]) --> FE[React + Vite Dashboard]
+    FE --> API[FastAPI Backend]
+
+    API --> SEARCH[Tavily Evidence Retrieval]
+    API --> AI[Google Gemini Assessment]
+
+    SEARCH --> EVIDENCE[Retrieved Evidence]
+    AI --> ASSESS[Claim Assessment]
+
+    EVIDENCE --> QUALITY[Source Quality Scoring]
+    ASSESS --> QUALITY
+
+    QUALITY --> DB[(SQLite Database)]
+
+    DB --> SNAP[Evidence Snapshots]
+    DB --> HISTORY[Verification History]
+
+    SNAP --> COMPARE[Temporal Evidence Comparison]
+    HISTORY --> COMPARE
+
+    COMPARE --> SCHEDULE[Suggested Recheck Interval]
+    COMPARE --> RESULT[Evidence Change Analysis]
+
+    SCHEDULE --> DASH[Dashboard Results]
+    RESULT --> DASH
+    DASH --> U
+
+
+
 ## 🧰 Technology Stack
 
 | Layer | Technology |
